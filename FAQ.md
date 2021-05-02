@@ -12,13 +12,37 @@ Or if you are not in mainland China, you can email your needs information to <zh
 
 They communicate with `knxd` running on a raspberry pi (or computer) via different hardware interface.
 
-HaChina's KNX board(shield) type A can connected to raspberry pi via USB. Or it can be a shield plugged into [Nodemcu-32s](https://docs.ai-thinker.com/en/esp32/boards/nodemcu_32s)'s 38-pin connector, and communicates with `knxd` using TCP on the Wifi.
+Both HaChina's KNX board(shield) type A and type B can connected to raspberry pi via USB.
 
-HaChina's KNX board(shield) type B is a shield which can be directly plugged into the 40-pin connector on raspberry pi(ZeroW/3B/3B+/4B) board.
+Type A can also be a shield plugged into [Nodemcu-32s](https://docs.ai-thinker.com/en/esp32/boards/nodemcu_32s)'s 38-pin connector, and communicates with `knxd` using TCP on the Wifi.
+
+Type B is a shield which can be directly plugged into the 40-pin connector on raspberry pi(ZeroW/3B/3B+/4B) board.
 
 #### *Can I make a KNX Bridge Board myself?*
 
 Yes, of course. You can base it on ncn5120, or any other IC supporting KNX Bus.
+
+#### *How can I enable the primary UART on PI OS?*
+
+1. Start raspi-config: `sudo raspi-config`.
+2. Select option 3 - Interface Options.
+3. Select option P6 - Serial Port.
+4. At the prompt `Would you like a login shell to be accessible over serial?` answer 'No'
+5. At the prompt `Would you like the serial port hardware to be enabled?` answer 'Yes'
+6. Exit raspi-config and reboot the Pi for changes to take effect.
+
+When you have these done, `/dev/ttyS0` and `/dev/serial0` will be the primary UART.
+
+#### *How can I enable the primary UART on HassOS?*
+
+1. Edit file `config.txt`.
+
+    It's on `hassos-boot` partition of the tf card. You can find it by pluging the tf card into a Windows computer, or find it under `/mnt/boot/` when you login to HassOS.
+
+2. Uncomment `enable_uart=1` in `config.txt`, and save it.
+3. Reboot the Pi for changes to take effect.
+
+When you have these done, `/dev/ttyS0` and `/dev/serial0` will be the primary UART.
 
 ## knxd docker
 
@@ -32,7 +56,8 @@ You can run it on different architecture computers including amd64/i386/armv7/aa
 
 The docker images are:
 - `zhujisheng/armv7-addon-knxd`
-- `zhujisheng/aarch64-addon-knxd`
+- `zhujisheng/armhf-addon-knxd`(It's for raspberry pi zero W)
+- `zhujisheng/aarch64-addon-knxd`(It's for 64bit OS on raspberry pi)
 - `zhujisheng/i386-addon-knxd`
 - `zhujisheng/amd64-addon-knxd`
 It is easy to distinguish them from the name. Replace with appropriate images in `docker run` command.

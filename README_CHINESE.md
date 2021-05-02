@@ -29,6 +29,12 @@ KNX连接板基于[ncn5120芯片](https://www.onsemi.com/pdf/datasheet/ncn5120-d
  
     KNX板作为树莓派的扩展板，直接对插到树莓派的40针GPIO引脚（HAChina KNX扩展版type B）
 
+    **这种连接方式，你必须在操作系统上打开primary UART.**
+
+    *[How can I enable the primary UART on PI OS?](FAQ.md#how-can-i-enable-the-primary-uart-on-pi-os)*
+
+    *[How can I enable the primary UART on HassOS?](FAQ.md#how-can-i-enable-the-primary-uart-on-hassos)*
+
 2. USB模式
 
     KNX板通过USB口，连接到树莓派（HAChina KNX扩展版type A）
@@ -55,7 +61,7 @@ KNX连接板基于[ncn5120芯片](https://www.onsemi.com/pdf/datasheet/ncn5120-d
 
 <img src="images/docker.png" width="20%">
 
-- 准备工作
+- 安装docker
     + 操作系统： `Pi OS`
     + 操作用户： `pi`
     + 安装docker：
@@ -96,7 +102,7 @@ KNX连接板基于[ncn5120芯片](https://www.onsemi.com/pdf/datasheet/ncn5120-d
     baudrate = 19200
 
     # 40-pin link to KNX Board
-    #device = /dev/ttyAMA0
+    #device = /dev/serial0
     #baudrate = 19200
 
     # TCP link to KNX Board
@@ -113,11 +119,11 @@ KNX连接板基于[ncn5120芯片](https://www.onsemi.com/pdf/datasheet/ncn5120-d
     --name knxd --network="host" \
     --tmpfs /etc/cont-init.d \
     --device=/dev/ttyUSB0 \
-    -v "/etc/knxd.ini:/etc/knxd.ini:ro \
+    -v /etc/knxd.ini:/etc/knxd.ini:ro \
     zhujisheng/armv7-addon-knxd 
     ```
 
-    如果KNX板采用对插模式与树莓派连接，修改运行参数为`--device=/dev/ttyAMA0`；如果采用TCP连接模式，不必设置`--device`运行参数
+    如果KNX板采用对插模式与树莓派连接，修改运行参数为`--device=/dev/serial0`；如果采用TCP连接模式，不必设置`--device`运行参数
 
 *[Must knxd runs on raspberry pi?](FAQ.md#must-knxd-runs-on-raspberry-pi)*
 

@@ -27,21 +27,29 @@ The KNX Bridge Board is based on [ncn5120 chip](https://www.onsemi.com/pdf/datas
 
 On the other hand, the KNX Bridge Board shall communicate with `knxd` running on Raspberry Pi. Three connection modes are supported, you could choose one of them.
 
-1. Plugging into Raspberry PI's board
+1. Connecting via USB
+
+    KNX Bridge Board has a mini USB interface, which could be connected to USB on raspberry pi.
+
+    HAChina KNX Bridge Board **type A** and **type B** supports this connection mode both.
+
+2. Plugging into Raspberry PI's mainboard
  
     As a shield, KNX Bridge Board could be plugged into the 40-pin connector on raspberry pi(ZeroW/3B/3B+/4B) mainboard directly. 
 
     HAChina KNX Bridge Board **type B** supports this connection mode.
 
-2. Connecting via USB
+    **You will have to enable the primary UART, if you connect this way.**
 
-    KNX Bridge Board has a mini USB interface, which could be connected to USB on raspberry pi.
+    *[How can I enable the primary UART on PI OS?](FAQ.md#how-can-i-enable-the-primary-uart-on-pi-os)*
 
-    HAChina KNX Bridge Board **type A** supports this connection mode.
+    *[How can I enable the primary UART on HassOS?](FAQ.md#how-can-i-enable-the-primary-uart-on-hassos)*
 
 3. Communicating via WIFI
 
     As a sheild of [NodeMCU-32s](https://docs.ai-thinker.com/en/esp32/boards/nodemcu_32s), KNX Bridge Board can plug into the 38-pin connector on [NodeMCU-32s](https://docs.ai-thinker.com/en/esp32/boards/nodemcu_32s). [Setup NodeMCU-32s](esp32.md), then it can communicate with `knxd` via Wifi.
+
+    HAChina KNX Bridge Board **type A** supports this connection mode.
 
 *[Where can I buy a KNX Bridge Board?](FAQ.md#where-can-i-buy-a-knx-bridge-board)*
 
@@ -99,7 +107,7 @@ Raspberry PI ZeroW/3B/3B+/4B are tested and recommended.
     baudrate = 19200
 
     # 40-pin link to KNX Board
-    #device = /dev/ttyAMA0
+    #device = /dev/serial0
     #baudrate = 19200
 
     # TCP link to KNX Board
@@ -112,16 +120,15 @@ Raspberry PI ZeroW/3B/3B+/4B are tested and recommended.
 - Run docker image `zhujisheng/armv7-addon-knxd`
 
     ```
-    docker run --rm -d \
+    docker run --rm \
     --name knxd --network="host" \
     --tmpfs /etc/cont-init.d \
     --device=/dev/ttyUSB0 \
-    -v "/etc/knxd.ini:/etc/knxd.ini:ro \
+    -v /etc/knxd.ini:/etc/knxd.ini:ro \
     zhujisheng/armv7-addon-knxd 
     ```
 
-    *Set parameter `--device=/dev/ttyAMA0` when KNX Bridge Board is plugging into Raspberry PI's mainboard. Remove parameter `--device` when KNX Bridge Board is communicating via WIFI.*
-    
+    *Set parameter `--device=/dev/serial0` when KNX Bridge Board is plugging into Raspberry PI's mainboard; Remove parameter `--device` when KNX Bridge Board is communicating via WIFI.*
 
 *[If my computer is not armv7, where can I get the docker image?](FAQ.md#if-my-computer-is-not-armv7-where-can-i-get-the-docker-image)*
 
@@ -173,7 +180,7 @@ Raspberry PI ZeroW/3B/3B+/4B are tested and recommended.
       baudrate = 19200
 
       # 40-pin link to KNX Board
-      #device = /dev/ttyAMA0
+      #device = /dev/serial0
       #baudrate = 19200
 
       # TCP link to KNX Board

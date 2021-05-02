@@ -10,11 +10,11 @@ Add ESP32's package url in `Additional Boards Manager URLs` of the menu `Prefere
 
 **`https://dl.espressif.com/dl/package_esp32_index.json`**
 
-<img src="images/arduino-esp32-1.png" width="80%">
+<img src="images/arduino-esp32-1.png" width="55%">
 
 Open `Boards manager...` in menu `Tools`. Search `ESP32`, then install it.
 
-<img src="images/arduino-esp32-2.png" width="80%">
+<img src="images/arduino-esp32-2.png" width="55%">
 
 ## `uart2tcp.ino`
 
@@ -22,7 +22,7 @@ Open `Boards manager...` in menu `Tools`. Search `ESP32`, then install it.
 2. Connect your computer to NodeMCU-32s by USB
 3. Select the correct `Board` and `Port` in the menu `Tools`
 
-    <img src="images/arduino-esp32-3.png" width="60%">
+    <img src="images/arduino-esp32-3.png" width="50%">
 
 4. Upload
 
@@ -30,7 +30,7 @@ Open `Boards manager...` in menu `Tools`. Search `ESP32`, then install it.
 
 Plug KNX Bridge Board into NodeMCU-32s, then program `uart2tcp`'s running mode will be controled by the two-position-dial-switch besides KNX bus connector on KNX Bridge Board.
 
-<img src="images/uart2tcp_mode.png" width="50%">
+<img src="images/uart2tcp_mode.png" width="35%">
 
 Switch No.1 controls the WIFI mode. `on` means NodeMCU runs as a WIFI AP, while `off` means STA.
 
