@@ -141,7 +141,7 @@ KNX连接板基于[ncn5120芯片](https://www.onsemi.com/pdf/datasheet/ncn5120-d
 
     安装其中的add-on：`KNXD daemon`
 
-    *[What's the different between knxd add-ons in da-anda and zhujisheng's add-on repository?](FAQ.md#whats-the-different-between-knxd-add-ons-in-da-anda-and-zhujishengs-add-on-repository)*
+    *[What's the difference between knxd add-ons in da-anda and zhujisheng's add-on repository?](FAQ.md#whats-the-difference-between-knxd-add-ons-in-da-anda-and-zhujishengs-add-on-repository)*
 
 - 配置
 
@@ -177,7 +177,7 @@ KNX连接板基于[ncn5120芯片](https://www.onsemi.com/pdf/datasheet/ncn5120-d
       baudrate = 19200
 
       # 40-pin link to KNX Board
-      #device = /dev/ttyAMA0
+      #device = /dev/serial0
       #baudrate = 19200
 
       # TCP link to KNX Board

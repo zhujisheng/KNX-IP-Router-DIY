@@ -1,7 +1,8 @@
+[中文](README_CHINESE.md)
 
 # KNX IP Router DIY
 
-## Summary
+## Overview
 
 IP Router is a KNX equipment connecting KNX network and IP network, to help IP devices receive and send signals on the KNX bus.
 
@@ -59,7 +60,7 @@ On the other hand, the KNX Bridge Board shall communicate with `knxd` running on
 
 ## Run `knxd`
 
-Raspberry PI ZeroW/3B/3B+/4B are tested and recommended.
+Raspberry PI ZeroW/3B/3B+/4B have been tested and recommended.
 
 *[Must knxd runs on raspberry pi?](FAQ.md#must-knxd-runs-on-raspberry-pi)*
 
@@ -102,15 +103,15 @@ Raspberry PI ZeroW/3B/3B+/4B are tested and recommended.
     [interface]
     driver = ncn5120
 
-    # USB link to KNX Board
+    # USB link to KNX Bridge Board
     device = /dev/ttyUSB0
     baudrate = 19200
 
-    # 40-pin link to KNX Board
+    # 40-pin link to KNX Bridge Board
     #device = /dev/serial0
     #baudrate = 19200
 
-    # TCP link to KNX Board
+    # TCP link to KNX Bridge Board
     #ip-address = 192.168.1.3
     #dest-port = 5120
     ```
@@ -144,7 +145,7 @@ Raspberry PI ZeroW/3B/3B+/4B are tested and recommended.
 
     Install `add-on:KNXD daemon` in the repository.
 
-    *[What's the different between knxd add-ons in `da-anda` and `zhujisheng`'s add-on repository?](FAQ.md#whats-the-different-between-knxd-add-ons-in-da-anda-and-zhujishengs-add-on-repository)*
+    *[What's the difference between knxd add-ons in `da-anda` and `zhujisheng`'s add-on repository?](FAQ.md#whats-the-difference-between-knxd-add-ons-in-da-anda-and-zhujishengs-add-on-repository)*
 
 - Configuration
 
@@ -175,15 +176,15 @@ Raspberry PI ZeroW/3B/3B+/4B are tested and recommended.
       [interface]
       driver = ncn5120
 
-      # USB link to KNX Board
+      # USB link to KNX Bridge Board
       device = /dev/ttyUSB0
       baudrate = 19200
 
-      # 40-pin link to KNX Board
+      # 40-pin link to KNX Bridge Board
       #device = /dev/serial0
       #baudrate = 19200
 
-      # TCP link to KNX Board
+      # TCP link to KNX Bridge Board
       #ip-address = 192.168.1.3
       #dest-port = 5120
     ```

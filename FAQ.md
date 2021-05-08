@@ -55,9 +55,9 @@ You can run it on different architecture computers including amd64/i386/armv7/aa
 #### *If my computer is not armv7, where can I get the docker image?*
 
 The docker images are:
-- `zhujisheng/armv7-addon-knxd`
-- `zhujisheng/armhf-addon-knxd`(It's for raspberry pi zero W)
-- `zhujisheng/aarch64-addon-knxd`(It's for 64bit OS on raspberry pi)
+- `zhujisheng/armv7-addon-knxd`(It's for 32bit OS on RaspberryPi)
+- `zhujisheng/armhf-addon-knxd`(It's for RaspberryPi Zero W)
+- `zhujisheng/aarch64-addon-knxd`(It's for 64bit OS on RaspberryPi)
 - `zhujisheng/i386-addon-knxd`
 - `zhujisheng/amd64-addon-knxd`
 It is easy to distinguish them from the name. Replace with appropriate images in `docker run` command.
@@ -70,7 +70,7 @@ Knxd is an open source software. You can compile it from source, and run it on a
 
 ## HomeAssistant Add-on Knxd
 
-#### *What's the different between knxd add-ons in `da-anda` and `zhujisheng`'s add-on repository?*
+#### *What's the difference between knxd add-ons in `da-anda` and `zhujisheng`'s add-on repository?*
 
 `zhujisheng`'s repository is forked from `da-anda`'s, and add an `image` config. 
 
