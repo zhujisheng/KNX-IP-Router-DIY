@@ -76,6 +76,12 @@ Knxd is an open source software. You can compile it from source, and run it on a
 
 If you install knx add-on from `zhujisheng`'s repository, you will **download** the add-on(docker) image. However, you will **build** the image locally from Dockerfile if you install knx add-on from  `da-anda`'s repository.
 
-#### *How can I config KNX devices in homeassistant?*
+## Control KNX devices via knxd
 
-Once you have set up the IP Router properly, you can add KNX devices to HomeAssistant， by using [knx integration](https://www.home-assistant.io/integrations/knx/).
+#### *How can I control KNX devices in HomeAssistant?*
+
+Once you have set up the IP Router properly, you can add KNX devices to HomeAssistant, by using [knx integration](https://www.home-assistant.io/integrations/knx/).
+
+#### *How can I control KNX devices in Node-RED?*
+
+Once you have set up the IP Router properly, you can control KNX devices by using [`node-red-contrib-knx-ultimate`](https://flows.nodered.org/node/node-red-contrib-knx-ultimate).

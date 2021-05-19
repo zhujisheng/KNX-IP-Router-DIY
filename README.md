@@ -193,4 +193,6 @@ Raspberry PI ZeroW/3B/3B+/4B have been tested and recommended.
 
    *Remove corresponding comment symbols in `[interface]` section, according to different connection methods of KNX Bridge Board.*
 
-    *[How can I config KNX devices in homeassistant?](FAQ.md#how-can-i-config-knx-devices-in-homeassistant)*
+*[How can I config KNX devices in HomeAssistant?](FAQ.md#how-can-i-config-knx-devices-in-homeassistant)*
+
+*[How can I control KNX devices in Node-RED?](FAQ.md#node-red-contrib-knx-ultimate)*
