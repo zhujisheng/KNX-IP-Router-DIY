@@ -2,11 +2,11 @@
 
 ## KNX board
 
-####  *Where can I buy a KNX Bridge board?*
+#### *Where can I buy a KNX Bridge board?*
 
-You can [buy it on taobao](https://item.taobao.com/item.htm?spm=a2oq0.12575281.0.0.50111debqg4Tao&ft=t&id=599299965979).
+You can [buy it on taobao](https://item.taobao.com/item.htm?spm=a21dvs.23580594.0.0.621e3d0dGzEzHR&ft=t&id=669724322918).
 
-Or if you are not in mainland China, you can email your needs information to <zhujisheng@gmail.com>.
+Or if you are not in mainland China, you can email your needs information to <q648993779@gmail.com>.
 
 #### *What's the difference between KNX Bridge Board type A and type B?*
 
